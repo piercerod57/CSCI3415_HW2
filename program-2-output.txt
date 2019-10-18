@@ -1,0 +1,599 @@
+CSCI 3415 - Principles of Programming Languages
+Fall 2019 - Program 2 - Python
+Dr. Doug Williams
+There is data for 14 decades:
+    1880's
+    1890's
+    1900's
+    1910's
+    1920's
+    1930's
+    1940's
+    1950's
+    1960's
+    1970's
+    1980's
+    1990's
+    2000's
+    2010's
+Processing year 1880 in decade 1880
+Processing year 1881 in decade 1880
+Processing year 1882 in decade 1880
+Processing year 1883 in decade 1880
+Processing year 1884 in decade 1880
+Processing year 1885 in decade 1880
+Processing year 1886 in decade 1880
+Processing year 1887 in decade 1880
+Processing year 1888 in decade 1880
+Processing year 1889 in decade 1880
+Processing year 1890 in decade 1890
+Processing year 1891 in decade 1890
+Processing year 1892 in decade 1890
+Processing year 1893 in decade 1890
+Processing year 1894 in decade 1890
+Processing year 1895 in decade 1890
+Processing year 1896 in decade 1890
+Processing year 1897 in decade 1890
+Processing year 1898 in decade 1890
+Processing year 1899 in decade 1890
+Processing year 1900 in decade 1900
+Processing year 1901 in decade 1900
+Processing year 1902 in decade 1900
+Processing year 1903 in decade 1900
+Processing year 1904 in decade 1900
+Processing year 1905 in decade 1900
+Processing year 1906 in decade 1900
+Processing year 1907 in decade 1900
+Processing year 1908 in decade 1900
+Processing year 1909 in decade 1900
+Processing year 1910 in decade 1910
+Processing year 1911 in decade 1910
+Processing year 1912 in decade 1910
+Processing year 1913 in decade 1910
+Processing year 1914 in decade 1910
+Processing year 1915 in decade 1910
+Processing year 1916 in decade 1910
+Processing year 1917 in decade 1910
+Processing year 1918 in decade 1910
+Processing year 1919 in decade 1910
+Processing year 1920 in decade 1920
+Processing year 1921 in decade 1920
+Processing year 1922 in decade 1920
+Processing year 1923 in decade 1920
+Processing year 1924 in decade 1920
+Processing year 1925 in decade 1920
+Processing year 1926 in decade 1920
+Processing year 1927 in decade 1920
+Processing year 1928 in decade 1920
+Processing year 1929 in decade 1920
+Processing year 1930 in decade 1930
+Processing year 1931 in decade 1930
+Processing year 1932 in decade 1930
+Processing year 1933 in decade 1930
+Processing year 1934 in decade 1930
+Processing year 1935 in decade 1930
+Processing year 1936 in decade 1930
+Processing year 1937 in decade 1930
+Processing year 1938 in decade 1930
+Processing year 1939 in decade 1930
+Processing year 1940 in decade 1940
+Processing year 1941 in decade 1940
+Processing year 1942 in decade 1940
+Processing year 1943 in decade 1940
+Processing year 1944 in decade 1940
+Processing year 1945 in decade 1940
+Processing year 1946 in decade 1940
+Processing year 1947 in decade 1940
+Processing year 1948 in decade 1940
+Processing year 1949 in decade 1940
+Processing year 1950 in decade 1950
+Processing year 1951 in decade 1950
+Processing year 1952 in decade 1950
+Processing year 1953 in decade 1950
+Processing year 1954 in decade 1950
+Processing year 1955 in decade 1950
+Processing year 1956 in decade 1950
+Processing year 1957 in decade 1950
+Processing year 1958 in decade 1950
+Processing year 1959 in decade 1950
+Processing year 1960 in decade 1960
+Processing year 1961 in decade 1960
+Processing year 1962 in decade 1960
+Processing year 1963 in decade 1960
+Processing year 1964 in decade 1960
+Processing year 1965 in decade 1960
+Processing year 1966 in decade 1960
+Processing year 1967 in decade 1960
+Processing year 1968 in decade 1960
+Processing year 1969 in decade 1960
+Processing year 1970 in decade 1970
+Processing year 1971 in decade 1970
+Processing year 1972 in decade 1970
+Processing year 1973 in decade 1970
+Processing year 1974 in decade 1970
+Processing year 1975 in decade 1970
+Processing year 1976 in decade 1970
+Processing year 1977 in decade 1970
+Processing year 1978 in decade 1970
+Processing year 1979 in decade 1970
+Processing year 1980 in decade 1980
+Processing year 1981 in decade 1980
+Processing year 1982 in decade 1980
+Processing year 1983 in decade 1980
+Processing year 1984 in decade 1980
+Processing year 1985 in decade 1980
+Processing year 1986 in decade 1980
+Processing year 1987 in decade 1980
+Processing year 1988 in decade 1980
+Processing year 1989 in decade 1980
+Processing year 1990 in decade 1990
+Processing year 1991 in decade 1990
+Processing year 1992 in decade 1990
+Processing year 1993 in decade 1990
+Processing year 1994 in decade 1990
+Processing year 1995 in decade 1990
+Processing year 1996 in decade 1990
+Processing year 1997 in decade 1990
+Processing year 1998 in decade 1990
+Processing year 1999 in decade 1990
+Processing year 2000 in decade 2000
+Processing year 2001 in decade 2000
+Processing year 2002 in decade 2000
+Processing year 2003 in decade 2000
+Processing year 2004 in decade 2000
+Processing year 2005 in decade 2000
+Processing year 2006 in decade 2000
+Processing year 2007 in decade 2000
+Processing year 2008 in decade 2000
+Processing year 2009 in decade 2000
+Processing year 2010 in decade 2010
+Processing year 2011 in decade 2010
+Processing year 2012 in decade 2010
+Processing year 2013 in decade 2010
+Processing year 2014 in decade 2010
+Processing year 2015 in decade 2010
+Processing year 2016 in decade 2010
+Processing year 2017 in decade 2010
+
+Female Name Rankings (by Decade)
+
+Top 10 female names for the 1880's
+Mary               91668
+Anna               38159
+Emma               25404
+Elizabeth          25006
+Margaret           21799
+Minnie             21724
+Ida                18283
+Bertha             18263
+Clara              17717
+Alice              17142
+
+Top 10 female names for the 1890's
+Mary              131136
+Anna               55261
+Margaret           37938
+Helen              37802
+Elizabeth          33879
+Ruth               32867
+Florence           32344
+Ethel              31453
+Emma               28652
+Marie              25853
+
+Top 10 female names for the 1900's
+Mary              161505
+Helen              69429
+Margaret           57921
+Anna               54918
+Ruth               51011
+Elizabeth          41708
+Dorothy            39112
+Marie              37091
+Florence           36191
+Mildred            36173
+
+Top 10 female names for the 1910's
+Mary              478642
+Helen             248155
+Dorothy           207476
+Margaret          189232
+Ruth              173678
+Mildred           123999
+Anna              118998
+Elizabeth         116811
+Frances           105600
+Virginia           94322
+
+Top 10 female names for the 1920's
+Mary              701746
+Dorothy           368870
+Helen             290398
+Betty             283092
+Margaret          245007
+Ruth              218513
+Virginia          169550
+Doris             151185
+Mildred           147152
+Frances           140385
+
+Top 10 female names for the 1930's
+Mary              572942
+Betty             300369
+Barbara           296392
+Shirley           229355
+Patricia          220573
+Dorothy           210393
+Joan              173425
+Margaret          157361
+Nancy             142479
+Helen             140412
+
+Top 10 female names for the 1940's
+Mary              640023
+Linda             531631
+Barbara           425242
+Patricia          411393
+Carol             292321
+Sandra            265523
+Nancy             252037
+Sharon            221223
+Judith            218017
+Susan             212012
+
+Top 10 female names for the 1950's
+Mary              625558
+Linda             564312
+Patricia          459623
+Susan             437723
+Deborah           430515
+Barbara           345706
+Debra             341306
+Karen             332485
+Nancy             286779
+Donna             270325
+
+Top 10 female names for the 1960's
+Lisa              496972
+Mary              355226
+Susan             287653
+Karen             286044
+Kimberly          259085
+Patricia          231146
+Linda             225419
+Donna             213453
+Michelle          208290
+Cynthia           196611
+
+Top 10 female names for the 1970's
+Jennifer          581772
+Amy               269001
+Melissa           253282
+Michelle          249133
+Kimberly          229109
+Lisa              228684
+Angela            225241
+Heather           203929
+Stephanie         160466
+Nicole            144672
+
+Top 10 female names for the 1980's
+Jessica           469472
+Jennifer          440859
+Amanda            369716
+Ashley            352171
+Sarah             272607
+Stephanie         218139
+Melissa           217903
+Nicole            210477
+Elizabeth         198965
+Heather           191859
+
+Top 10 female names for the 1990's
+Jessica           303086
+Ashley            301801
+Emily             237227
+Sarah             224310
+Samantha          223995
+Amanda            191077
+Brittany          190812
+Elizabeth         172624
+Taylor            169014
+Megan             160355
+
+Top 10 female names for the 2000's
+Emily             223658
+Madison           193134
+Emma              181229
+Olivia            155991
+Hannah            155670
+Abigail           150853
+Isabella          149485
+Samantha          134246
+Elizabeth         133375
+Ashley            133010
+
+Top 10 female names for the 2010's
+Emma              158573
+Sophia            152936
+Olivia            147486
+Isabella          142064
+Ava               125937
+Mia               103580
+Emily             100414
+Abigail            99356
+Madison            84803
+Elizabeth          77233
+
+Male Name Rankings (by Decade)
+
+Top 10 male names for the 1880's
+John               89950
+William            84881
+James              54056
+George             47651
+Charles            46656
+Frank              30967
+Joseph             26292
+Henry              24139
+Robert             24074
+Thomas             23750
+
+Top 10 male names for the 1890's
+John               80665
+William            72244
+James              50724
+George             43358
+Charles            36848
+Joseph             29000
+Frank              28718
+Robert             26147
+Edward             22033
+Henry              21664
+
+Top 10 male names for the 1900's
+John               84593
+William            69320
+James              62170
+George             43589
+Charles            36185
+Robert             35849
+Joseph             35173
+Frank              29046
+Edward             24515
+Thomas             21785
+
+Top 10 male names for the 1910's
+John              376323
+William           303022
+James             275079
+Robert            239189
+Joseph            179302
+George            176611
+Charles           173536
+Edward            125720
+Frank             116019
+Thomas             91619
+
+Top 10 male names for the 1920's
+Robert            576362
+John              564064
+James             515306
+William           512400
+Charles           298033
+George            261953
+Joseph            243808
+Richard           222607
+Edward            197352
+Donald            191826
+
+Top 10 male names for the 1930's
+Robert            590716
+James             547383
+John              487860
+William           416646
+Richard           330437
+Charles           303163
+Donald            283648
+George            192255
+Thomas            183855
+Joseph            180536
+
+Top 10 male names for the 1940's
+James             795660
+Robert            758018
+John              711528
+William           556399
+Richard           477396
+David             426293
+Charles           361691
+Thomas            350739
+Michael           336533
+Ronald            282417
+
+Top 10 male names for the 1950's
+James             843489
+Michael           837142
+Robert            830134
+John              797660
+David             769652
+William           591025
+Richard           535238
+Thomas            454195
+Mark              382430
+Charles           361035
+
+Top 10 male names for the 1960's
+Michael           833254
+David             734056
+John              713540
+James             684885
+Robert            650872
+Mark              441446
+William           421539
+Richard           373974
+Thomas            327158
+Jeffrey           302054
+
+Top 10 male names for the 1970's
+Michael           707647
+Christopher       475614
+Jason             462928
+David             445955
+James             444948
+John              402841
+Robert            397407
+Brian             322841
+William           283564
+Matthew           277959
+
+Top 10 male names for the 1980's
+Michael           663690
+Christopher       554859
+Matthew           458955
+Joshua            396570
+David             383677
+James             356428
+Daniel            345478
+Robert            321655
+John              321111
+Joseph            299417
+
+Top 10 male names for the 1990's
+Michael           462314
+Christopher       360204
+Matthew           351606
+Joshua            329114
+Jacob             298334
+Nicholas          275282
+Andrew            272835
+Daniel            272227
+Tyler             262263
+Joseph            260667
+
+Top 10 male names for the 2000's
+Jacob             273793
+Michael           250517
+Joshua            231885
+Matthew           221493
+Daniel            203684
+Christopher       203249
+Andrew            202416
+Ethan             201754
+Joseph            194672
+William           194280
+
+Top 10 male names for the 2010's
+Noah              145195
+Jacob             140091
+Mason             133535
+Liam              133019
+William           131241
+Ethan             125561
+Michael           122265
+Alexander         118376
+James             112387
+Daniel            111658
+
+Female Name Rankings (by Name)
+                1880 1890 1900 1910 1920 1930 1940 1950 1960 1970 1980 1990 2000 2010
+Abigail                                                                        6    8
+Alice             10                                                                 
+Amanda                                                               3    6          
+Amy                                                             2                    
+Angela                                                          7                    
+Anna               2    2    4    7                                                  
+Ashley                                                               4    2   10     
+Ava                                                                                 5
+Barbara                                     3    3    6                              
+Bertha             8                                                                 
+Betty                                  4    2                                        
+Brittany                                                                  7          
+Carol                                            5                                   
+Clara              9                                                                 
+Cynthia                                                   10                         
+Deborah                                               5                              
+Debra                                                 7                              
+Donna                                                10    8                         
+Doris                                  8                                             
+Dorothy                      7    3    2    6                                        
+Elizabeth          4    5    6    8                                  9    8    9   10
+Emily                                                                     3    1    7
+Emma               3    9                                                      3    1
+Ethel                   8                                                            
+Florence                7    9                                                       
+Frances                           9   10                                             
+Hannah                                                                         5     
+Heather                                                         8   10               
+Helen                   4    2    2    3   10                                        
+Ida                7                                                                 
+Isabella                                                                       7    4
+Jennifer                                                        1    2               
+Jessica                                                              1    1          
+Joan                                        7                                        
+Judith                                           9                                   
+Karen                                                 8    4                         
+Kimberly                                                   5    5                    
+Linda                                            2    2    7                         
+Lisa                                                       1    6                    
+Madison                                                                        2    9
+Margaret           5    3    3    4    5    8                                        
+Marie                  10    8                                                       
+Mary               1    1    1    1    1    1    1    1    2                         
+Megan                                                                    10          
+Melissa                                                         3    7               
+Mia                                                                                 6
+Michelle                                                   9    4                    
+Mildred                     10    6    9                                             
+Minnie             6                                                                 
+Nancy                                       9    7    9                              
+Nicole                                                         10    8               
+Olivia                                                                         4    3
+Patricia                                    5    4    3    6                         
+Ruth                    6    5    5    6                                             
+Samantha                                                                  5    8     
+Sandra                                           6                                   
+Sarah                                                                5    4          
+Sharon                                           8                                   
+Shirley                                     4                                        
+Sophia                                                                              2
+Stephanie                                                       9    6               
+Susan                                           10    4    3                         
+Taylor                                                                    9          
+Virginia                         10    7                                             
+
+Male Name Rankings (by Name)
+                1880 1890 1900 1910 1920 1930 1940 1950 1960 1970 1980 1990 2000 2010
+Alexander                                                                           8
+Andrew                                                                    7    7     
+Brian                                                           8                    
+Charles            5    5    5    7    5    6    7   10                              
+Christopher                                                     2    2    2    6     
+Daniel                                                               7    8    5   10
+David                                            6    5    2    4    5               
+Donald                                10    7                                        
+Edward                  9    9    8    9                                             
+Ethan                                                                          8    6
+Frank              6    7    8    9                                                  
+George             4    4    4    6    6    8                                        
+Henry              8   10                                                            
+Jacob                                                                     5    1    2
+James              3    3    3    3    3    2    1    1    4    5    6              9
+Jason                                                           3                    
+Jeffrey                                                   10                         
+John               1    1    1    1    2    3    3    4    3    6    9               
+Joseph             7    6    7    5    7   10                       10   10    9     
+Joshua                                                               4    4    3     
+Liam                                                                                4
+Mark                                                  9    6                         
+Mason                                                                               3
+Matthew                                                        10    3    3    4     
+Michael                                          9    2    1    1    1    1    2    7
+Nicholas                                                                  6          
+Noah                                                                                1
+Richard                                8    5    5    7    8                         
+Robert             9    8    6    4    1    1    2    3    5    7    8               
+Ronald                                          10                                   
+Thomas            10        10   10         9    8    8    9                         
+Tyler                                                                     9          
+William            2    2    2    2    4    4    4    6    7    9             10    5
