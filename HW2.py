@@ -78,28 +78,34 @@ def main():
 					
 				decades[i].femaleDict.clear()
 				decades[i].femaleDict = newFemaleDict.copy()
-				#for key in yearArray[(( i * 10 ) + j)].maleDict: 
-				#	if key in decades[i].maleDict:
-				#		
-				#	else: 
-				#		decades[i].maleDict[key] = yearArray[(( i * 10 ) + j)].maleDict[key]
-				#		pass
-				#for key in yearArray[(( i * 10 ) + j)].femaleDict: 
-				#	if key in decades[i].femaleDict: 
-				#		newDict = Counter(decades[i].femaleDict) + Counter(yearArray[(( i * 10 ) + j)].femaleDict[key])
-				#		decades[i].femaleDict.clear()
-				#		decades[i].femaleDict = newDict.copy()
-				#	else: 
-				#		decades[i].femaleDict[key] = yearArray[(( i * 10 ) + j)].femaleDict[key]
-				#		pass
 			else:
 				break
 	#---------------Parse-Decades---------------
 	#for key,val in decades[0].maleDict.items():
 	#	print(key, "=>", val)
 		
-	for key,val in decades[0].femaleDict.items():
-		print(key, "=>", val)
+	#for key,val in decades[0].femaleDict.items():
+	#	print(key, "=>", val)
+	cnt = 1
+	for decade in decades:
+		print("The top 10 most popular names in the %s's"%(decade.year))
+		print("Males:")
+		for key,val in decade.maleDict.items():
+			if cnt == 11:
+				cnt = 1
+				break
+			else:
+				print("\t", cnt, ". ", key, "\t", val)
+				cnt+=1
+		print("Females:")
+		for key,val in decade.femaleDict.items():
+			if cnt == 11:
+				cnt = 1
+				break
+			else:
+				print("\t", cnt, ". ", key, "\t", val)
+				cnt+=1
+			
 	
 
 if __name__ == '__main__':
