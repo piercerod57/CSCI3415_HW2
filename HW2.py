@@ -5,24 +5,35 @@
 
 import os
 import math
+import itertools  
+import collections 
 
 def main():
+	#--------------Class-Definitions--------------
+	class Year:
+		def __init__(self, year, maleDict, femaleDict):
+			self.year = year
+			self.maleDict = maleDict
+			self.femaleDict = femaleDict
+	
 	class Decade:
 		def __init__(self, year):
 			self.year = year
 			self.maleDict = dict()
 			self.femaleDict = dict()
-	#Open the file back and read the contents
+	#--------------Class-Definitions--------------
+	
+	#Open the files and read the contents
+	#-----------------File-Read-----------------
 	years = os.listdir('./data/')
 	
 	yearArray = []
 	decades = []
 	
-	#-----------------File-Read-----------------
 	for year in years:
 		
-		yearMaleArray = []
-		yearFemaleArray = []
+		yearMaleDict = {}
+		yearFemaleDict = {}
 		
 		print("Attempting to read: " + year)
 		file = open("./data/" + year, "r")
@@ -31,15 +42,14 @@ def main():
 		for line in fl:
 			x = line.split(',')
 			x[2] = x[2].replace("\n", "")
-			nameEntry = dict(name = x[0], gender = x[1], count = x[2])
 			
-			if nameEntry["gender"] == "M":
-				yearMaleArray.append(nameEntry)
-			elif nameEntry["gender"] == "F":
-				yearFemaleArray.append(nameEntry)
+			if x[1] == "M":
+				yearMaleDict[x[0]] = int(x[2])
+			elif x[1] == "F":
+				yearFemaleDict[x[0]] = int(x[2])
 		
-		yearDict = dict(year = year.strip("yob.txt"), maleNames = yearMaleArray, femaleNames = yearFemaleArray)
-		yearArray.append(yearDict)
+		newYear = Year(year.strip("yob.txt"), yearMaleDict, yearFemaleDict)
+		yearArray.append(newYear)
 	#-----------------File-Read-----------------
 	
 	
@@ -48,28 +58,47 @@ def main():
 	print("Data found for %s decades:"%(decadesLength))
 	
 	for i in range(decadesLength):
-		print("\t The %s's"%(yearArray[i*10]["year"]))
-		newDecade = Decade(yearArray[i*10]["year"])
+		print("\t The %s's"%(yearArray[i*10].year))
+		newDecade = Decade(yearArray[i*10].year)
 		decades.append(newDecade)
 		for j in range(10):
 			if (( i * 10 ) + j) < len(yearArray):
 				#print(yearArray[(( i * 10 ) + j)]["year"])
-				for maleName in yearArray[(( i * 10 ) + j)]["maleNames"]:
-					#if maleName["name"] in decades[i].maleDict:
-					#	decades[i].maleDict[maleName["name"]] = decades[i].maleDict.get(maleName["name"]) + maleName["count"]
-					#else:
-					decades[i].maleDict[maleName["name"]] = maleName["count"]
-						
+				#@NOTE(P): Break these for loops into function?
+				newMaleDict = collections.defaultdict(int)
+				for key, val in itertools.chain(decades[i].maleDict.items(), yearArray[(( i * 10 ) + j)].maleDict.items()):
+					newMaleDict[key] += val
 				
-				for femaleName in yearArray[(( i * 10 ) + j)]["femaleNames"]:
-					#if femaleName["name"] in decades[i].femaleDict:
-					#	decades[i].femaleDict[femaleName["name"]] = decades[i].femaleDict.get(femaleName["name"]) + femaleName["count"]
-					#else:
-					decades[i].femaleDict[femaleName["name"]] = femaleName["count"]
+				decades[i].maleDict.clear()
+				decades[i].maleDict = newMaleDict.copy()
+				
+				newFemaleDict = collections.defaultdict(int)
+				for key, val in itertools.chain(decades[i].femaleDict.items(), yearArray[(( i * 10 ) + j)].femaleDict.items()): 
+					newFemaleDict[key] += val
+					
+				decades[i].femaleDict.clear()
+				decades[i].femaleDict = newFemaleDict.copy()
+				#for key in yearArray[(( i * 10 ) + j)].maleDict: 
+				#	if key in decades[i].maleDict:
+				#		
+				#	else: 
+				#		decades[i].maleDict[key] = yearArray[(( i * 10 ) + j)].maleDict[key]
+				#		pass
+				#for key in yearArray[(( i * 10 ) + j)].femaleDict: 
+				#	if key in decades[i].femaleDict: 
+				#		newDict = Counter(decades[i].femaleDict) + Counter(yearArray[(( i * 10 ) + j)].femaleDict[key])
+				#		decades[i].femaleDict.clear()
+				#		decades[i].femaleDict = newDict.copy()
+				#	else: 
+				#		decades[i].femaleDict[key] = yearArray[(( i * 10 ) + j)].femaleDict[key]
+				#		pass
 			else:
 				break
 	#---------------Parse-Decades---------------
-	for key,val in decades[0].maleDict.items():
+	#for key,val in decades[0].maleDict.items():
+	#	print(key, "=>", val)
+		
+	for key,val in decades[0].femaleDict.items():
 		print(key, "=>", val)
 	
 
