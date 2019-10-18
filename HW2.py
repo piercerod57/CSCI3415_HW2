@@ -81,11 +81,8 @@ def main():
 			else:
 				break
 	#---------------Parse-Decades---------------
-	#for key,val in decades[0].maleDict.items():
-	#	print(key, "=>", val)
-		
-	#for key,val in decades[0].femaleDict.items():
-	#	print(key, "=>", val)
+	
+	#--------------Print-By-Decade--------------
 	cnt = 1
 	for decade in decades:
 		print("The top 10 most popular names in the %s's"%(decade.year))
@@ -95,7 +92,7 @@ def main():
 				cnt = 1
 				break
 			else:
-				print("\t", cnt, ". ", key, "\t", val)
+				print("\t", cnt, " ", key, "\t", val)
 				cnt+=1
 		print("Females:")
 		for key,val in decade.femaleDict.items():
@@ -103,10 +100,10 @@ def main():
 				cnt = 1
 				break
 			else:
-				print("\t", cnt, ". ", key, "\t", val)
+				print("\t", cnt, " ", key, "\t", val)
 				cnt+=1
 			
-	
+	#--------------Print-By-Decade--------------
 
 if __name__ == '__main__':
 	main()
