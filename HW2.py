@@ -84,7 +84,7 @@ def main():
 	
 	#--------------Print-By-Decade--------------
 	cnt = 1
-	for decade in decades:
+	for decade in decades:#@NOTE(P): Currently not sorted by value, just returns 10 names regardless of value
 		print("The top 10 most popular names in the %s's"%(decade.year))
 		print("Males:")
 		for key,val in decade.maleDict.items():
