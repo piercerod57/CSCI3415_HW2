@@ -22,6 +22,7 @@ class Decade:
 #--------------Class-Definitions--------------
 
 
+
 #-----------------File-Read-----------------
 def ReadFiles():
 	yearArray = []
@@ -50,6 +51,7 @@ def ReadFiles():
 		
 	return yearArray
 #-----------------File-Read-----------------
+
 
 
 #---------------Parse-Decades---------------
@@ -85,6 +87,7 @@ def ParseDecades(yearArray, gender):
 #---------------Parse-Decades---------------
 
 
+
 #--------------Print-By-Decade--------------
 def PrintTopTenNamesByDecade(decades, gender):#@NOTE(P): return array with top10 names
 	top10GenderNamesByDecade = []
@@ -92,7 +95,7 @@ def PrintTopTenNamesByDecade(decades, gender):#@NOTE(P): return array with top10
 	cnt = 1
 	for decade in decades:
 		newDecade = Decade(decade.year)
-		print("The top 10 most popular ", gender, " names in the %s's"%(decade.year))
+		print("The top 10 most popular", gender, "names in the %s's"%(decade.year))
 		for key,val in sorted(decade.genderDict.items(), key=lambda x: x[1], reverse=True):
 			if cnt == 11:
 				cnt = 1
@@ -102,10 +105,25 @@ def PrintTopTenNamesByDecade(decades, gender):#@NOTE(P): return array with top10
 				newDecade.genderDict[key] = val
 				cnt+=1
 		top10GenderNamesByDecade.append(newDecade)
+		print('\n')
 	print('\n')
 	
 	return top10GenderNamesByDecade
 #--------------Print-By-Decade--------------
+
+
+
+#------------Alphabetize-Names--------------
+def AlphebetizeNames(decades):
+	alphabetizedNameList = []
+	for decade in decades:
+		for name in decade.genderDict:
+			if name not in alphabetizedNameList:
+				alphabetizedNameList.append(name)
+	alphabetizedNameList.sort()
+	return alphabetizedNameList
+#------------Alphabetize-Names--------------
+
 
 
 #----------------Name-Rankings---------------
@@ -114,17 +132,30 @@ def PrintNameRankings(decades, gender):
 	print('\t', '\t', end =" ")
 	for decade in decades:
 		print(decade.year, '\t', end =" ")
+	print('\n', end ='')
+	
+	nameList = AlphebetizeNames(decades)
+	for name in nameList:
+		print(name, end ="\t")
+		if len(name) < 8:
+			print('\t', end='')
+		
+		for decade in decades:
+			if name in decade.genderDict:
+				print(' ', 'x', '\t', end='')
+			else:
+				print(' ', '-', '\t', end='')
+		print('', end='\n')
 	print('\n')
-	
-	
 #----------------Name-Rankings---------------
+
 
 
 #-------------------Main--------------------
 def main():
 	#@NOTE(P): Open the files and read the contents
 	yearArray = ReadFiles();
-	#NOTE(P): Sort the entries into arrays of Python Dictionaries
+	#NOTE(P): Sorts the entries into arrays of Python Dictionaries
 	decadesMale = ParseDecades(yearArray, "Male")
 	decadesFemale = ParseDecades(yearArray, "Female")
 	
